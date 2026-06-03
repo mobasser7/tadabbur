@@ -2,12 +2,7 @@
 const pending = 0;
 const correct = 1;
 const wrong = 2;
-
-
 const segmenter = new Intl.Segmenter("ar", {granularity: "grapheme",});
-
-
-
 
 function splitIntoGraphemes(verse) {
     return Array.from(segmenter.segment(verse), character => character.segment);
@@ -35,7 +30,7 @@ constructor (verse) {
             this.status[this.cursorIndex] = correct;
             this.cursorIndex++;
         }
-        
+
         else{
             this.status[this.cursorIndex] = wrong;
         }
